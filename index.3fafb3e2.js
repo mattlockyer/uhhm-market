@@ -36075,8 +36075,8 @@ async function signTransaction(...args) {
 exports.signTransaction = signTransaction;
 
 },{"buffer":"3susO","js-sha256":"1GFfV","./utils/enums":"5ds8j","borsh":"7dwPW","./utils/key_pair":"8Bch3"}],"1GFfV":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 /**
  * [js-sha256]{@link https://github.com/emn178/js-sha256}
  *
@@ -40797,6 +40797,7 @@ const parseAmount = (amount)=>{
     return `${whole}${decimal.slice(0, 2).padEnd(2, '0')}`;
 };
 const formatAmount = (amount)=>{
+    if (amount < 4700) amount = 4700;
     let r = amount % 100;
     r = r < 10 ? r.toString().padStart(2, '0') : r.toString().padEnd(2, '0');
     return Math.floor(amount / 100).toString() + '.' + r;
@@ -52448,8 +52449,8 @@ exports.pbkdf2 = require('./lib/async');
 exports.pbkdf2Sync = require('./lib/sync');
 
 },{"./lib/async":"5HXOG","./lib/sync":"3GmrD"}],"5HXOG":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 var Buffer = require('safe-buffer').Buffer;
 var checkParameters = require('./precondition');
 var defaultEncoding = require('./default-encoding');
@@ -67708,8 +67709,8 @@ function compare(a, b) {
 }
 
 },{"parse-asn1":"5C49D","./mgf":"6pq6I","./xor":"7r40P","bn.js":"HXxAx","browserify-rsa":"1wB3x","create-hash":"5DGs1","./withPublic":"mFED9","safe-buffer":"3zZ8y"}],"3GutH":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 'use strict';
 function oldBrowser() {
     throw new Error('secure random number generation not supported by this browser\nuse chrome, FireFox or Internet Explorer 11');
