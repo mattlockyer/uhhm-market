@@ -36075,8 +36075,8 @@ async function signTransaction(...args) {
 exports.signTransaction = signTransaction;
 
 },{"buffer":"3susO","js-sha256":"1GFfV","./utils/enums":"5ds8j","borsh":"7dwPW","./utils/key_pair":"8Bch3"}],"1GFfV":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 /**
  * [js-sha256]{@link https://github.com/emn178/js-sha256}
  *
@@ -43094,82 +43094,82 @@ const TokenSale = (props)=>{
     }, []);
     const edition = token_id.split(':')[1];
     const bids = token.bids[_nearUtils.fungibleId] || [];
-    const hasWinningBid = bids[0] && bids[0].owner_id === account?.accountId;
+    const hasWinningBid = bids[0] && bids[0].owner_id && bids[0].owner_id === account?.accountId;
     let topBidOwner = bids[0]?.owner_id;
     if (hasWinningBid) topBidOwner = 'Your bid';
-    const hasOutbid = !hasWinningBid && bids.some(({ owner_id  })=>owner_id === account?.accountId
+    const hasOutbid = !hasWinningBid && bids[0].owner_id && bids.some(({ owner_id  })=>owner_id === account?.accountId
     );
     /// TODO sort bids descending
     return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "content",
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 36
+            lineNumber: 37
         },
         __self: undefined
     }, !isMobile && /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "heading",
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 39
+            lineNumber: 40
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 40
+            lineNumber: 41
         },
         __self: undefined
     }, "HipHopHead"), /*#__PURE__*/ _reactDefault.default.createElement("h2", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 41
+            lineNumber: 42
         },
         __self: undefined
     }, displayType)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "bids-type",
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 46
+            lineNumber: 47
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 47
+            lineNumber: 48
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "label",
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 48
+            lineNumber: 49
         },
         __self: undefined
     }, "High"), /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "amount",
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 49
+            lineNumber: 50
         },
         __self: undefined
     }, "$", _format.formatAmount(minBid))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "ending",
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 51
+            lineNumber: 52
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 52
+            lineNumber: 53
         },
         __self: undefined
     }, "Auction ends in:"), /*#__PURE__*/ _reactDefault.default.createElement("h2", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 53
+            lineNumber: 54
         },
         __self: undefined
     }, timeLeft))), /*#__PURE__*/ _reactDefault.default.createElement("button", {
@@ -43178,39 +43178,39 @@ const TokenSale = (props)=>{
         ,
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 57
+            lineNumber: 58
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 60
+            lineNumber: 61
         },
         __self: undefined
     }, "# ", edition), /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 61
+            lineNumber: 62
         },
         __self: undefined
     }, _format.years(edition)), /*#__PURE__*/ _reactDefault.default.createElement("img", {
         src: _menuSmallSvgDefault.default,
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 62
+            lineNumber: 63
         },
         __self: undefined
     })), hasOutbid && /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "button red center text-white",
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 66
+            lineNumber: 67
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 67
+            lineNumber: 68
         },
         __self: undefined
     }, "You were outbid!")), hasWinningBid ? /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -43221,13 +43221,13 @@ const TokenSale = (props)=>{
         },
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 73
+            lineNumber: 74
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 77
+            lineNumber: 78
         },
         __self: undefined
     }, "You have the winning bid!")) : account ? /*#__PURE__*/ _reactDefault.default.createElement("button", {
@@ -43236,20 +43236,20 @@ const TokenSale = (props)=>{
         ,
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 81
+            lineNumber: 82
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 82
+            lineNumber: 83
         },
         __self: undefined
     }, "Place a Bid"), /*#__PURE__*/ _reactDefault.default.createElement("img", {
         src: _arrowSvgDefault.default,
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 83
+            lineNumber: 84
         },
         __self: undefined
     })) : /*#__PURE__*/ _reactDefault.default.createElement("button", {
@@ -43257,70 +43257,70 @@ const TokenSale = (props)=>{
         ,
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 86
+            lineNumber: 87
         },
         __self: undefined
     }, "Connect Wallet"), account && credits && /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "center",
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 91
+            lineNumber: 92
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 91
+            lineNumber: 92
         },
         __self: undefined
     }, "Credits: ", _format.formatAmount(credits))), account && /*#__PURE__*/ _reactDefault.default.createElement(_buyCredits.BuyCredits, {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 94
+            lineNumber: 95
         },
         __self: undefined
     }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "bids",
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 96
+            lineNumber: 97
         },
         __self: undefined
-    }, !bids.length ? /*#__PURE__*/ _reactDefault.default.createElement("p", {
+    }, !bids.length || bids[0].owner_id === undefined ? /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 98
+            lineNumber: 99
         },
         __self: undefined
     }, "No Bids!") : /*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement("h4", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 101
+            lineNumber: 102
         },
         __self: undefined
     }, "Latest Bids"), /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-            lineNumber: 102
+            lineNumber: 103
         },
         __self: undefined
     }, bids.map(({ owner_id , price  }, i)=>/*#__PURE__*/ _reactDefault.default.createElement("div", {
             key: i,
             __source: {
                 fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-                lineNumber: 104
+                lineNumber: 105
             },
             __self: undefined
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             __source: {
                 fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-                lineNumber: 105
+                lineNumber: 106
             },
             __self: undefined
         }, i === 0 ? topBidOwner : owner_id), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             __source: {
                 fileName: "/home/matt/Projects/near-apps/uhhm-market-testnet/src/components/TokenSale.js",
-                lineNumber: 106
+                lineNumber: 107
             },
             __self: undefined
         }, _format.formatAmount(price)))
@@ -44152,7 +44152,7 @@ function CreditsInner(props) {
             _storage.set(`undefined_wallet_auth_key`, `{"accountId":"${accountId}","allKeys":["${newPublicKeys[0]}"]}`);
             _storage.set(TEMP_CREDENTIALS, null);
             update('app.loading', false);
-            window.location.href = '/';
+            window.location.href = window.location.origin + window.location.pathname;
         };
         // check if they closed window
         signInInterval = setInterval(async ()=>{
@@ -47841,8 +47841,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"7nYxY","./lib/_stream_writable.js":"3qzuo","./lib/_stream_duplex.js":"uRelU","./lib/_stream_transform.js":"CgeIy","./lib/_stream_passthrough.js":"5Rp0N","./lib/internal/streams/end-of-stream.js":"7LVux","./lib/internal/streams/pipeline.js":"1IR5a"}],"7nYxY":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -49596,8 +49596,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"7AgFc","./_stream_readable":"7nYxY","./_stream_writable":"3qzuo","inherits":"1EUwN"}],"3qzuo":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
